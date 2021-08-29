@@ -1,0 +1,43 @@
+
+
+
+<h2 style="margin-top: 100px;">{{topartists.tracks[0].subtitle}} Hits</h2>
+
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+  <div  *ngFor="let x of topartists.tracks">
+
+      <div class='col'>
+
+          <div class="container">
+              <div class="card w-100 m-4 shadow">
+
+                  <img src="{{x.share.image}}" alt="">
+
+                  <div class="card-body">
+                      <h6>{{x.subtitle}}</h6>
+                      <h6>{{x.title}}</h6>
+                      <a href="{{x.share.href}}" class="btn btn-primary">View song</a>
+
+
+                  </div>
+
+          </div>
+
+
+
+       </div>
+
+      </div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+

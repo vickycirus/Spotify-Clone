@@ -1,0 +1,407 @@
+
+
+<!--search bar-->
+
+<div class="container" style="margin-top:100px;">
+
+    <form >
+
+        <div class="mt-5">
+            <div class="row">
+
+                <div class="col-sm-2 col-md-3"></div>
+                <div class="col-sm-8 col-md-6">
+
+
+                    <input [(ngModel)]="searchQuery" class="form-control" type="search"  name="search" id="se"  placeholder="Search artists or song...." >
+
+                </div>
+
+                <div class="col-sm-2 col-md-3">
+
+                    <button type="submit" (click)="searchArtists()" (click)="recommended()"  class=" btn btn-dark ">search</button>
+
+                </div>
+
+            </div>
+            </div>
+    </form>
+ </div>
+
+
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+        <div  *ngFor="let x of artists.tracks.hits">
+
+            <div class='col'>
+
+                <div class="container">
+                    <div class="card w-100 m-5 shadow">
+
+                        <img src="{{x.track.share.image}}" alt="">
+
+                        <div class="card-body">
+                            <h5>{{x.track.title}}</h5>
+                              <p>{{x.track.subtitle}}</p>
+
+                            <a href="{{x.track.share.href}}" class="btn btn-primary">View song</a>
+
+
+                        </div>
+
+                </div>
+
+
+
+             </div>
+
+            </div>
+
+        </div>
+
+
+
+      </div>
+
+
+   <!--recommended-->
+
+   <h1 *ngIf="status">recommended songs</h1>
+
+   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+    <div  *ngFor="let x1 of rec.tracks">
+
+        <div class='col'>
+
+            <div class="container">
+                <div class="card w-100 m-5 shadow">
+
+                    <img src="{{x1.share.image}}" alt="">
+
+                    <div class="card-body">
+                        <h5>{{x1.title}}</h5>
+                          <p>{{x1.subtitle}}</p>
+
+                        <a href="{{x1.share.href}}" class="btn btn-primary">View song</a>
+
+
+                    </div>
+
+            </div>
+
+
+
+         </div>
+
+        </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+  <!--top international artists-->
+
+
+<h4 class="mt-5">TOP INTERNATIONAL ARTISTS</h4>
+
+<div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6">
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://www.irishtimes.com/polopoly_fs/1.3520128.1528206115!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40170654);" >TAYLOR SWIFT</button>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://static.billboard.com/files/media/maroon-5-upclose-terryrichardson650-compressed.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+    <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(10197384);" >MAROON 5</button>
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://cdn.vox-cdn.com/thumbor/kQ80fqXhGa5gqX783fBzPhxonCc=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/20045463/drake_raptor.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+    <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(10100284);" >DRAKE</button>
+
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://media.pitchfork.com/photos/5fc971f4dcf8ebd9e69c444d/1:1/w_1000,h_1000,c_limit/Billie%20Eilish.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(202287034);" >BILLIE EILISH</button>
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://api.time.com/wp-content/uploads/2020/09/time-100-Selena-Gomez.jpg"
+    alt="SELENA GOMEZ" width="100%" height="200px" class="rounded">
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40286441);" >SELENA GOMEZ</button>
+
+    </div>
+
+  </div>
+
+
+  <div class="col">
+
+
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://static.toiimg.com/thumb/msid-70908917,imgsize-179486,width-800,height-600,resizemode-75/70908917.jpg"
+    alt="JUSTIN BIEBER" width="100%" height="200px" class="rounded">
+
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40543550);" >JUSTIN BIEBER</button>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+<!--top bollywood singers-->
+
+<h4 class="mt-5">TOP SINGERS OF BOLLYWOOD</h4>
+
+<div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 mb-5">
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://images.hindustantimes.com/img/2021/03/12/1600x900/e2a13dc8-82ec-11eb-a5d1-d80dd4489497_1615524096990.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(41663839);" >ARIJIT SINGH</button>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://static.india.com/imageTopics/ae56d9ee745a8a0a80e76b8f3b9bb6b6.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+    <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40282006);"> NEHA KAKKAR</button>
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Shreya_Ghoshal_at_Filmfare_Awards_South.jpg/220px-Shreya_Ghoshal_at_Filmfare_Awards_South.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+    <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40098216);" >SHREYA GHOSHAL</button>
+
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://static.toiimg.com/photo/67861182.cms"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(6039974);">SONU NIGAM</button>
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://yt3.ggpht.com/ytc/AKedOLRXkrlX64ZcsH8Pn28d7pWn5iKcziI1-YyKPWFMsA=s900-c-k-c0x00ffffff-no-rj"
+    alt="SELENA GOMEZ" width="100%" height="200px" class="rounded">
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(10022385);" >A R RAHAMAN</button>
+
+    </div>
+
+  </div>
+
+
+  <div class="col">
+
+
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Armaan_Malik_Singer.jpg"
+    alt="JUSTIN BIEBER" width="100%" height="200px" class="rounded">
+
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40266215);" >ARMAAN MALIK</button>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<!--Top tollywood singers-->
+
+<h4 class="mt-5">TOP SINGERS OF TOLLYWOOD</h4>
+
+<div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 mb-5">
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvnawXYy7MgUr8cNKWtpct-LX5xuS0ZIymjA&usqp=CAU"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(43016889);" >SID SRIRAM</button>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_197/post_11104334/thumb.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+    <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40237270);"> HEMA CHANDRA</button>
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://m.media-amazon.com/images/M/MV5BMzQ3NGU5YjctNmFkZC00NDFlLWJhN2QtYjJiYjg0NjgwNzYxXkEyXkFqcGdeQXVyNDc2NzU1MTA@._V1_.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+    <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40307994);" >GEETHA MADHURI</button>
+
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Revanth_%281%29.jpg"
+    alt="TAYLOR SWIFT" width="100%" height="200px" class="rounded">
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(204675967);">L V REVANTH</button>
+
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://in.bmscdn.com/Artist/sunitha-upadrashta-1268485-29-05-2019-08-17-43.jpg"
+    alt="SELENA GOMEZ" width="100%" height="200px" class="rounded">
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40248143);" >SUNITHA</button>
+
+    </div>
+
+  </div>
+
+
+  <div class="col">
+
+
+    <div class="card w-100" style=" margin-top:50px">
+
+   <img src="https://static.toiimg.com/thumb/msid-77594460,width-1200,height-900,resizemode-4/.jpg"
+    alt="JUSTIN BIEBER" width="100%" height="200px" class="rounded">
+
+
+
+  <button class="btn btn-sm btn-secondary" type="submit" (click)="onswift(40052019);" >S.P.BALASUBRAMANYAM</button>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
